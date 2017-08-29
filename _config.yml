@@ -6,7 +6,7 @@ words_per_minute: 200
 keyword: "Yanlz | 凌志"
 # Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-url: "http://yanlz.com"
+url: "http://localhost:4000"
 baseurl: ""
 
 # Owner/author information
@@ -14,7 +14,7 @@ owner:
   name:           Yanlz | 凌志
   avatar:         avatar.jpg
   bio:            "祝这个世界热热闹闹，祝我还是我."
-  email:          yanlz@gmail.com
+  email:          yanlingzhi2014@gmail.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
   facebook:       
