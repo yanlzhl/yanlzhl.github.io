@@ -238,8 +238,8 @@ social_icons:
 avatar: /assets/images/avatar.jpg
 
 reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
-wechatpay: /path/to/wechat-reward-image.png
-alipay: /path/to/alipay-reward-image.png
+wechatpay: /path/to/wechat-reward-image.jpg
+alipay: /path/to/alipay-reward-image.jpg
 
 
 # Table Of Contents in the Sidebar
