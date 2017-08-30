@@ -359,7 +359,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night bright
 
 
 # ---------------------------------------------------------------
@@ -418,7 +418,7 @@ changyan:
 #    button | slide
 # Warning: Baidu Share does not support https.
 baidushare: true
-  type: button
+  #type: button
 
 # Share
 #jiathis: true
