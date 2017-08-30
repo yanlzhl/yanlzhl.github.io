@@ -4,7 +4,7 @@
 # ---------------------------------------------------------------
 
 # Site
-title: Yanlz
+title: Yanlz | 凌志
 subtitle: 祝这个世界热热闹闹，愿我还是我
 description: 祝这个世界热热闹闹，愿我还是我
 author: Yanlz | 凌志
@@ -238,8 +238,8 @@ social_icons:
 avatar: /assets/images/avatar.jpg
 
 reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
-wechatpay: /path/to/wechat-reward-image
-alipay: /path/to/alipay-reward-image
+wechatpay: /path/to/wechat-reward-image.png
+alipay: /path/to/alipay-reward-image.png
 
 
 # Table Of Contents in the Sidebar
