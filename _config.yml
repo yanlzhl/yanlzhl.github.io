@@ -323,8 +323,8 @@ post_meta:
 # Post wordcount display settings
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
+  wordcount: true
+  min2read: true
   separated_meta: true
 
 # Wechat Subscriber
@@ -387,7 +387,7 @@ baidu_analytics: a09b09948bf35b44cf918b771f9871e8
 # Disqus
 disqus:
   enable: true
-  shortname: lingzhiyan
+  shortname: yanlz
   count: true
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
