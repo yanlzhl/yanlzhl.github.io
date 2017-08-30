@@ -30,8 +30,7 @@ tags: [建站,博客,开源技术]
 25号晚至今，几乎是5天时间整，从Hexo到Jekyll发布第一天文章，遇到的问题还是不少，尤其是自己电脑运行环境导致的千奇百怪只有自己想象不到的问题，从自己上网百度、google问题未果，到GitHub上提issue甚至写Email、Twitter联系开源者解决问题...折腾到心累而又不得不坚持到最后，终于是挺过来。下面给出几篇在Jekyll建站所遇问题的解决方案的链接，一是以后仍能后使用到而不必藏在自己的收藏夹中，这也是自己建立博客的原因，二是总结共享出来，在获得开源成果之下，也能继续开花结果。
 
 链接明天补上.....
-### [Windows/Mac/Linux PDF](https://github.com/yanlzhl/yanlzhl.github.io/blob/master/path/to/%E9%A2%9C%E5%87%8C%E5%BF%97-java-%E6%B1%9F%E8%A5%BF%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%EF%BC%88java%E6%96%B9%E5%90%91%EF%BC%89.pdf
-)
+### [Windows/Mac/Linux PDF](https://github.com/yanlzhl/yanlzhl.github.io/blob/master/path/to/%E9%A2%9C%E5%87%8C%E5%BF%97-java-%E6%B1%9F%E8%A5%BF%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%EF%BC%88java%E6%96%B9%E5%90%91%EF%BC%89.pdf)
 
 
 
