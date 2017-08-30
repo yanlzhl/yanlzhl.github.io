@@ -237,7 +237,7 @@ social_icons:
 # in directory: /assets/images/avatar.gif
 avatar: /assets/images/avatar.jpg
 
-reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+reward_comment: 热情洋溢的程序员欢迎您以任何形式转载！
 wechatpay: /path/to/wechat-reward-image.jpg
 alipay: /path/to/alipay-reward-image.jpg
 
