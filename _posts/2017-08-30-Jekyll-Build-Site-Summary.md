@@ -2,7 +2,7 @@
 layout: post
 title: Jekyll 建站总结
 date: 2017-08-30 10:30
-description: 此次建站，完全使用开源的博客框架，节省了大量自建站从需求、编码到测试的工作时间，此外开源框架还有大量使用人员和开发人员的完善，自建网站更易获得最新的更新并获得技术维护。
+description: 此次建站，完全使用开源的博客框架，节省了大量自建站从需求、编码到测试的工作时间，此外开源框架还有大量用户和开发人员的完善，且更易获得最新的更新并获得技术维护。
 categories: [Jekyll,Hexo]
 tags: [建站,博客,开源技术]
 ---
@@ -29,6 +29,7 @@ tags: [建站,博客,开源技术]
 
 25号晚至今，几乎是5天时间整，从Hexo到Jekyll发布第一天文章，遇到的问题还是不少，尤其是自己电脑运行环境导致的千奇百怪只有自己想象不到的问题，从自己上网百度、google问题未果，到GitHub上提issue甚至写Email、Twitter联系开源者解决问题...折腾到心累而又不得不坚持到最后，终于是挺过来。下面给出几篇在Jekyll建站所遇问题的解决方案的链接，一是以后仍能后使用到而不必藏在自己的收藏夹中，这也是自己建立博客的原因，二是总结共享出来，在获得开源成果之下，也能继续开花结果。
 
+> * [ windows7下安装ruby,rubyGems和devkit](http://blog.csdn.net/u012882134/article/details/51685127)
 > * [NextT使用文档](http://theme-next.simpleyyt.com/)
 > * [在 Windows 上搭建本地 Jekyll 编译环境时问题汇总](http://theme-next.simpleyyt.com/)
 > * [Windows 下安装 Jekyll 及启动遇到的问题](https://silocean.github.io/2016/10/19/windows-install-jekyll/)
