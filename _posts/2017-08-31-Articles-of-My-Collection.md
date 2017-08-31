@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-08-31 16:30
-title: Articles of my Collection  
+title: Articles of My Collection  
 description: 好文好贴，一些不错的网站,不定期更新。
 categories: [杂文]
 tags: [网站,收藏]
