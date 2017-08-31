@@ -40,7 +40,7 @@ public class DatabaseOperationController {
 > * 调用依赖注入的Class的方法的java访问修饰符权限应该在private之上，即采用package(默认)、protected和public中的一种。
 > * 采用了private修饰的方法，在其中调用private修饰的依赖注入的类，则该类对象必定为null.因此，该方法调用的依赖注入的类的java访问修饰符一定要高于其类的访问修饰符。
 
-## [Cmd Markdown Java语言中有4种访问修饰符][1]
+## [Java语言中有4种访问修饰符][1]
 
 1.package是默认的保护模式，又加做包访问，没有任何修饰符时就采用这种保护模式。包访问允许域和方法被同一个包内任何类的任何方法访问.（包内访问）。
  
