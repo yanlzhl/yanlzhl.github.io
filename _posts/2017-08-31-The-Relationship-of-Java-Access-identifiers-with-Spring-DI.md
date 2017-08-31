@@ -29,7 +29,7 @@ public class DatabaseOperationController {
 	    List<Database> databaseList = databaseService.getAll();
 		......
 		return new ResponseModel.Builder().msg("查询成功").result(resultArray).build();
-    }
+    	}
 }
 ```
 **调用该方法后抛出NullPointerException异常，找出问题所在了吗？仔细找找！**
