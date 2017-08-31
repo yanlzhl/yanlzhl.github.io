@@ -29,7 +29,10 @@ tags: [建站,博客,开源技术]
 
 25号晚至今，几乎是5天时间整，从Hexo到Jekyll发布第一天文章，遇到的问题还是不少，尤其是自己电脑运行环境导致的千奇百怪只有自己想象不到的问题，从自己上网百度、google问题未果，到GitHub上提issue甚至写Email、Twitter联系开源者解决问题...折腾到心累而又不得不坚持到最后，终于是挺过来。下面给出几篇在Jekyll建站所遇问题的解决方案的链接，一是以后仍能后使用到而不必藏在自己的收藏夹中，这也是自己建立博客的原因，二是总结共享出来，在获得开源成果之下，也能继续开花结果。
 
-链接明天补上.....
+> * [NextT使用文档](http://theme-next.simpleyyt.com/)
+> * [在 Windows 上搭建本地 Jekyll 编译环境时问题汇总](http://theme-next.simpleyyt.com/)
+> * [Windows 下安装 Jekyll 及启动遇到的问题](https://silocean.github.io/2016/10/19/windows-install-jekyll/)
+> * [GitHub Metadata No GitHub API authentication could be found](http://knightcodes.com/miscellaneous/2016/09/13/fix-github-metadata-error.html/)
 
 
 
