@@ -7,11 +7,11 @@ categories: [Spring,Java]
 tags: [Spring,Java]
 ---
 
-#Java访问修饰符与Spring 依赖注入之间的关系及注意的问题
+# Java访问修饰符与Spring 依赖注入之间的关系及注意的问题
 ------
 > 本文的思考来自昨晚公司项目编码测试中的一个Exception，小小低级错误的排查工作却轮番上阵了好几个人，甚至项目组老大，问题实在不足以引起足够的重视，当时一度认为是项目中其他Jar包（Shiro）引起的该Bean的装配失败，使用该Bean中方法调用引起NullPointerException。
 
-##引起异常的原代码如下：
+## 引起异常的原代码如下：
 ```Java
 @RestController
 @RequestMapping(value = "/api/data_operation")
@@ -34,7 +34,7 @@ public class DatabaseOperationController {
 ```
 **调用该方法后抛出NullPointerException异常，找出问题所在了吗？仔细找找！**
 
-##异常的总结思考：
+## 异常的总结思考：
 > * Java修饰符中有4中访问修饰符:private、package(默认)、protected和public，访问权限逐渐递增。
 > * Spring DI/IOC 一般采用private修饰。如：private DatabaseService databaseService;
 > * 调用依赖注入的Class的方法的java访问修饰符权限应该在private之上，即采用package(默认)、protected和public中的一种。
