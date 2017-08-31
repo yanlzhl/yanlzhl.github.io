@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-08-31 11:00
-title: The Relationship of Java Access Identifier with Spring DI 
+title: The Relationship of Java Access Identifiers with Spring DI 
 description: Java访问修饰符与Spring 依赖注入之间的关系及注意的问题。
 categories: [Spring,Java]
 tags: [Spring,Java]
