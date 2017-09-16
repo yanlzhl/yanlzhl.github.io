@@ -38,6 +38,8 @@ StrictModes yes
 LoginGraceTime 120
 PermitRootLogin yes
 StrictModes yes
+
+sudo /etc/init.d/ssh restart //SSH重启生效
 ```
 5.因系统时初次安装使用，加入root的密码在安装的时候为admin,那么此时若要使用SSH，仍然需要初始化密码，否则远程XShell等工具连接仍然会出现“ssh服务器拒绝了密码,请再试一次”,假如此次密码保持不变，输入仍为admin,则在XShell连接时使用root/admin连接即可：
 ```java
