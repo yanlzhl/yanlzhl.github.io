@@ -3,8 +3,8 @@ layout: post
 date: 2017-09-16 09:28
 title: How to build your own ShadowSocks 
 description:  本人自建ShadowSocks过程中参考的方案教程整理而来，涉及Linux服务器端、Windosw、IOS、安卓以及Linux Desktop桌面系统，不同客户端搭建方案不同，愿大家都能翻墙到邻家科学上网，总结如下。
-categories: [ShadowSocks,科学上网]
-tags: [ShadowSocks]
+categories: [ShadowSocks]
+tags: [ShadowSocks,科学上网]
 ---
 # 一、服务器&客户端介绍
 > * Amazon EC2---Centos 6.5
