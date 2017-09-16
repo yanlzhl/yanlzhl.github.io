@@ -6,7 +6,7 @@ description:  本人自建ShadowSocks过程中参考的方案教程整理而来�
 categories: [ShadowSocks]
 tags: [ShadowSocks,科学上网]
 ---
-# 一、服务器&客户端介绍
+# 服务器&客户端介绍
 > * Amazon EC2---Centos 6.5
 > * iPhone---Wingy/SsrConnectPro
 > * android---Shadowsocks
@@ -30,7 +30,7 @@ windows配置配置最为方便，不多说。
 ## Ubuntu Desktop 16.04 LTS
 在自个老旧的电脑上裸装Ubuntu带桌面系统，在局域网中也可通过windows上Xshell等工具连接，方便实操Linux，Ubuntu是Linux家族中桌面应用众多，如网易云音乐，搜狗输入法等，偏向家用型OS。
 
-# 二、安装教程
+# 安装教程
 ## Shadowsocks
 通过ShadowsocksR一键安装脚本
 ![cmd-markdown-logo](https://shadowsocks.be/usr/uploads/shadowsocks.png)
@@ -134,7 +134,7 @@ sudo apt-get install shadowsocks-qt5
 
 ![SwitchySharp图二](http://ow5hmv2cu.bkt.clouddn.com/swith2.jpg)
 
-# 三、安装参考教程
+# 安装参考教程
 因开源服务和精神而倍感这个世界的美好！感谢技术爱好者和追求自由科学上网的个人将自己的技术经验一字一字码上网络进行分享。
 也许部分链接可能失效或者其它原因无法访问，相信本文的图文可以给予最直接的帮助！彩蛋揭晓：AWS注册绑定信用卡，可免费享有一年诸多服务使用权，如S3、EC2等。
 丁酉年七月廿六 于寓舍
