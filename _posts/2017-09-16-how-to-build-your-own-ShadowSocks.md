@@ -124,9 +124,9 @@ sudo apt-get update
 sudo apt-get install shadowsocks-qt5
 ```
 ### shadowsocks-qt5配置
-![cmd-markdown-logo](http://ow5hmv2cu.bkt.clouddn.com/ss1.jpg)
+![cmd-markdown-logo](http://ow5hmv2cu.bkt.clouddn.com/ss11.jpg)
 
-![cmd-markdown-logo](http://ow5hmv2cu.bkt.clouddn.com/ss2.jpg)
+![cmd-markdown-logo](http://ow5hmv2cu.bkt.clouddn.com/ss22.jpg)
 ### SwitchyOmega配置
 **下载链接：**[SwitchyOmega ][3]
 
