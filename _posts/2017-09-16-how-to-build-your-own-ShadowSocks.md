@@ -143,7 +143,7 @@ sudo apt-get install shadowsocks-qt5
 > * [linux配置shadowsocks客户端][6]
 > * [各种系统下Shadowsocks客户端的安装与配置][7]
 
-
+                          丁酉年七月廿六 于寓舍
   [1]: https://shadowsocks.org/en/download/clients.html
   [2]: https://amazonaws-china.com/
   [3]: https://github.com/FelisCatus/SwitchyOmega/releases
