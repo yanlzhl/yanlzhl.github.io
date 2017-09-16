@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2017-9-11 19:52
+date: 2017-09-11 19:52
 title: My Method of Accumulating Vocabulary
 description: 学习英语的一套词汇积累方法，自我感觉良好，适用于程序员或者每天在网络上大量英文阅读人群。
 categories: [English]
