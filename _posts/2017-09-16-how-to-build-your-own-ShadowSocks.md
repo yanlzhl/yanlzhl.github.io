@@ -138,12 +138,11 @@ sudo apt-get install shadowsocks-qt5
 为这个世界开源组织和个人表示由衷的感谢，开源精神永垂不朽，光芒四射！感谢技术爱好者和追求自由科学上网的个人将自己的技术经验一字一字码上网络进行分享。
 也许部分链接可能失效或者其它原因无法访问，相信本文的图文可以给予最直接的帮助！
 彩蛋揭晓：AWS注册绑定信用可，可免费享有一年诸多服务使用权，如S3、EC2等。
+                    丁酉年七月廿六 于寓舍
 > * [ShadowSocks各平台安装教程][4]
 > * [linux-ubuntu使用shadowsocks客户端配置][5]
 > * [linux配置shadowsocks客户端][6]
 > * [各种系统下Shadowsocks客户端的安装与配置][7]
-
-                          丁酉年七月廿六 于寓舍
   [1]: https://shadowsocks.org/en/download/clients.html
   [2]: https://amazonaws-china.com/
   [3]: https://github.com/FelisCatus/SwitchyOmega/releases
