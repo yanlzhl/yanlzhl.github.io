@@ -2,7 +2,7 @@
 layout: post
 date: 2017-09-19 19:00
 title: Build Kong environment base on Docker 
-description: 负责公司内部项目开发，给运维团队使用的技术做二次整合开发，其中API Gataway使用开源的Kong，感觉挺有意思，研究一二；上篇文章写道“”在centos 7上搭建Docker环境”，因此本文将在Docker的基础上构建Kong.
+description: 负责公司内部项目建设，给运维团队使用的技术做二次整合开发，其中API Gataway使用开源的Kong，感觉挺有意思，研究一二；上篇文章写道“”在centos 7上搭建Docker环境”，因此本文将在Docker的基础上构建Kong.
 categories: [Docker,Centos]
 tags: [Docker,Centos]
 ---
@@ -57,10 +57,11 @@ docker run -d --name kong \
     -p 8444:8444 \
     kong:latest
 ```
-# 测试Kong
-若运行成功后，将返回kong的json数据
-```java
-curl -i http://localhost:8001/
-```
+# 参考资料
+> [Kong官网][2]  
+> [菜鸟教程Docker命令大全][3]
+
 
   [1]: http://www.runoob.com/docker/docker-command-manual.html
+  [2]: https://getkong.org/install/docker/
+  [3]: http://www.runoob.com/docker/docker-command-manual.html
