@@ -22,12 +22,12 @@ useradd 选项 用户名
 -s Shell文件 指定用户的登录Shell。
 -u 用户号 指定用户的用户号，如果同时有-o选项，则可以重复使用其他用户的标识号。
 ```java
-# useradd –d /usr/sam -m sam
+useradd –d /usr/sam -m sam
 
 此命令创建了一个用户sam，
 其中-d和-m选项用来为登录名sam产生一个主目录/usr/sam（/usr为默认的用户主目录所在的父目录）。
 
-# useradd -s /bin/sh -g group –G adm,root gem
+useradd -s /bin/sh -g group –G adm,root gem
 
 此命令新建了一个用户gem，该用户的登录Shell是/bin/sh，它属于group用户组，同时又属于adm和root用户组，其中group用户组是其主组。
 这里可能新建组：#groupadd group及groupadd adm　
@@ -38,7 +38,7 @@ useradd 选项 用户名
 常用的选项是-r，它的作用是把用户的主目录一起删除。
 
 ``` java
-# userdel sam
+userdel sam
 
 此命令删除用户sam在系统文件中（主要是/etc/passwd, /etc/shadow, /etc/group等）的记录，同时删除用户的主目录。
 ```
@@ -48,7 +48,7 @@ usermod 选项 用户名
 常用的选项包括-c, -d, -m, -g, -G, -s, -u以及-o等，这些选项的意义与useradd命令中的选项一样，可以为用户指定新的资源值。
 
 ``` java
-# usermod -s /bin/ksh -d /home/z –g developer sam
+usermod -s /bin/ksh -d /home/z –g developer sam
 
 此命令将用户sam的登录Shell修改为ksh，主目录改为/home/z，用户组改为developer。
 ```
@@ -73,16 +73,16 @@ New password:*******
 Re-enter new password:*******
 
 如果是超级用户，可以用下列形式指定任何用户的口令：
-# passwd sam
+passwd sam
 New password:*******
 Re-enter new password:*******
 普通用户修改自己的口令时，passwd命令会先询问原口令，验证后再要求用户输入两遍新口令，如果两次输入的口令一致，则将这个口令指定给用户；而超级用户为用户指定口令时，就不需要知道原口令。
 
-# passwd -d sam
+passwd -d sam
 此命令将用户sam的口令删除，这样用户sam下一次登录时，系统就不再询问口令。
 
 passwd命令还可以用-l(lock)选项锁定某一用户，使其不能登录
-# passwd -l sam
+passwd -l sam
 
 新建用户异常：
 useradd -d /usr/hadoop -u 586 -m hadoop -g hadoop
@@ -108,11 +108,11 @@ cat /etc/group 可以查看 组
 
 **命令操作**
 ``` java
-# groupadd group1
+groupadd group1
 
 此命令向系统中增加了一个新组group1，新组的组标识号是在当前已有的最大组标识号的基础上加1。
 
-#groupadd -g 101 group2
+groupadd -g 101 group2
 
 此命令向系统中增加了一个新组group2，同时指定新组的组标识号是101。
 ```
@@ -122,7 +122,7 @@ cat /etc/group 可以查看 组
 
 **命令操作**
 ``` java
-#groupdel group1
+groupdel group1
 
 此命令从系统中删除组group1。
 ```
@@ -137,11 +137,11 @@ groupmod 选项 用户组
 
 **命令操作**
 ```java
-# groupmod -g 102 group2
+groupmod -g 102 group2
 
 此命令将组group2的组标识号修改为102。
 
-# groupmod –g 10000 -n group3 group2
+groupmod –g 10000 -n group3 group2
 
 此命令将组group2的标识号改为10000，组名修改为group3。
 ```
