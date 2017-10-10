@@ -2,7 +2,7 @@
 layout: post
 date: 2017-10-10 11:00
 title: Linux 用户管理命令
-description: Linux 用户管理命令。学了不一定就一直能掌握，不适用始终都会忘。
+description: Linux 用户管理命令。学了不一定代表一直能掌握，不使用一定会忘记。
 categories: [Linux]
 tags: [Linux]
 ---
