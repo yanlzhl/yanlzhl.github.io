@@ -1,10 +1,10 @@
 ---
 layout: post
-date: 2017-12-07 11:00
+date: 2017-12-08 11:00
 title: Spark world count
-description:Spark计算单词个数
+description: spark入门，计算文本中词频
 categories: [Spark]
-tags: [Spark,SBT,Assembly]
+tags: [Spark,SBT,Assemblu]
 ---
 
 # sbt项目
