@@ -1,3 +1,12 @@
+---
+layout: post
+date: 2017-12-07 11:00
+title: Spark world count
+description:Spark计算单词个数
+categories: [Spark]
+tags: [Spark,SBT,Assembly]
+---
+
 # sbt项目
 ## idea安装scala插件
 参考：http://blog.csdn.net/a2011480169/article/details/52712421
