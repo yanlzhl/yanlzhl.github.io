@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2017-10-10 11:00
+date: 2017-12-11 16:00
 title: Build hadoop & spark cluster
-description: 搭建hadoop&spark集群记录[Build hadoop & spark cluster records]
+description: 搭建hadoop&spark集群记录,ZK实现高可用
 categories: [Hadoop,Spark,Zookeeper]
 tags: [Hadoop,Spark,Zookeeper]
 ---
