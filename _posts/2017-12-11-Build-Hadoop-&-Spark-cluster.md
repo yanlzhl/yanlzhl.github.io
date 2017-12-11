@@ -35,7 +35,10 @@ ecs-ali
 [root@ecs-ali ~]# hostnamectl --transient
 ecs-ali
 
-就像上面展示的那样，在修改静态/瞬态主机名时，任何特殊字符或空白字符会被移除，而提供的参数中的任何大写字母会自动转化为小写。一旦修改了静态主机名，/etc/hostname 将被自动更新。然而，/etc/hosts 不会更新以保存所做的修改，所以你每次在修改主机名后一定要手动更新/etc/hosts，之后再重启CentOS 7。否则系统再启动时会很慢。
+就像上面展示的那样，在修改静态/瞬态主机名时，任何特殊字符或空白字符会被移除，
+而提供的参数中的任何大写字母会自动转化为小写。一旦修改了静态主机名，/etc/hostname 将被自动更新。
+然而，/etc/hosts 不会更新以保存所做的修改，所以你每次在修改主机名后一定要手动更新/etc/hosts，
+之后再重启CentOS 7。否则系统再启动时会很慢。
 ```
 修改主机名后reboot。
 
@@ -59,7 +62,7 @@ hadoop和spark集群共用同一账户
 useradd -s /sbin/nologin spark
 usermod -s /bin/bash spark //用于没有权限登陆问题
 passwd //修改下密码，可设亦可不设
-chown spark:spark /usr/local/spark //变更用户组,确保该目录已经存在
+chown -R spark:spark /usr/local/spark //变更用户组,确保该目录已经存在
 ```
 **注意：下一步节点之间免密登陆应该用于spark用户，特别是在生产环境。**
 
@@ -80,10 +83,10 @@ hadoop的进程之间同信使用ssh方式，需要每次都要输入密码。�
 
 从节点配置：
 
- - 1. 以同样的方式生成秘钥（ssh-keygen -t rsa -P "" ），然后s1和s2将生成的id_rsa.pub公钥追加到m1的authorized_keys中）
- - 2. 在s1中执行命令：scp id_rsa.pub m1:/root/.ssh/id_rsa.pub.s1 ，在s2中执行命令：scp id_rsa.pub m1:/root/.ssh/id_rsa.pub.s2
- - 3. 进入m1执行命令：cat id_rsa.pub.s1 >> authorized_keys ，cat id_rsa.pub.s1 >> authorized_keys
- - 4. 最后将生成的包含三个节点的秘钥的authorized_keys 复制到s1和s2的.ssh目录下（ scp authorized_keys s1:/root/.ssh/， scp authorized_keys s2:/root/.ssh/）
+1. 以同样的方式生成秘钥（ssh-keygen -t rsa -P "" ），然后s1和s2将生成的id_rsa.pub公钥追加到m1的authorized_keys中）
+2. 在s1中执行命令：scp id_rsa.pub m1:/root/.ssh/id_rsa.pub.s1 ，在s2中执行命令：scp id_rsa.pub m1:/root/.ssh/id_rsa.pub.s2
+3. 进入m1执行命令：cat id_rsa.pub.s1 >> authorized_keys ，cat id_rsa.pub.s1 >> authorized_keys
+4. 最后将生成的包含三个节点的秘钥的authorized_keys 复制到s1和s2的.ssh目录下（ scp authorized_keys s1:/root/.ssh/， scp authorized_keys s2:/root/.ssh/）
 
 验证ssh免密码登录
 	1. 输入命令ssh  localhost(主机名) 根据提示输入“yes” 
@@ -528,8 +531,11 @@ scala> rdd.foreach(println)
 (hello,2)
 (bigdata,1)
 ```
+# 总结
+虽是一个搭建环境的过程，也曾多次不在乎，可在动手的时出现的问题出乎想象，即使参照着网络前任经验也会有差错，碰到始终找不到问题原因不得不搁置，如
+worker节点连接:7077端口拒绝，telnet也不同，后来通过netstat -ntpl找到7077启动来127.0.0.1:7077上，意味着只能本机访问，这一问题曾搁置不前，又如zk实现了spark高可用，但当原来master死亡之后，原来的非master上worker会死亡，此外，其他节点注册到备用master上又会出现权限拒绝问题...在生产环境上，又得使用非root用户，搭建spark也是对自己linux水平的一次测试和能力提升。
 
-#参考
+# 参考
 - [spark集成hadoop][1]
 - [zookeeper集群][2]
 
