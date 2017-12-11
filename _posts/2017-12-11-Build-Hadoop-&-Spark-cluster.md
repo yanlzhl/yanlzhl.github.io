@@ -498,6 +498,15 @@ vim slaves
 ecs-ali2
 ecs-ali3
 
+因为使用ZK高考用，所以呢，你需要在子节点上也启用master
+sbin/start-all.sh
+此时大考浏览器分别访问8080端口页面，可以看见master
+Status: ALIVE
+而slaves节点
+Status: STANDBY
+
+而当你，故意kill掉master节点后，备用master期间状态会变为RECOVER大约1 2分钟后
+备用master状态将变成ALIVE
 ```
 ## 启动spark
 ```java
