@@ -2,7 +2,7 @@
 layout: post
 date: 2017-12-12 16:00
 title: Spark learning summary
-description: spark基础知识
+description: spark核心概念理解
 categories: [Hadoop,Spark]
 tags: [Hadoop,Spark]
 ---
