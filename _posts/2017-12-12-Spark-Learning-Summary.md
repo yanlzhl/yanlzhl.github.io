@@ -38,7 +38,7 @@ https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf（Engl
 
 spark能与hadoop完美兼容，能以hadoop集成，并且能通过Mesos&standalone或者在云上部署集群，亦可直接访问HDFS、Cassndra、HBase、S3等数据源；与hadoop不同的是，采用了内存+硬盘取代hadoop只能在硬盘上作为数据存储的方式；设计了新的编程模型RDD,能让数据处理优雅的转换、操作、分布式job、staged、tasks。
  
-# spark五大核心对象
+# spark核心对象
 - Master，
 - work 
 - Executor
