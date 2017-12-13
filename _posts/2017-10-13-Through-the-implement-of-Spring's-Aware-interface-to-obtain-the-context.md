@@ -3,7 +3,7 @@ layout: post
 date: 2017-10-10 11:00
 title: Spring 接口工具类
 description: 该工具类目前用在两个地方，一是登录用户信息绑定在ThreadLocal线程，二是Spring容器与其他容器不兼容时，获取系统Bean实体或配置属性。通过这个工具类，让我更加钦佩Spring Framework的设计哲学，需踏踏实实地阅读源码。
-categories: [Java,spring]
+categories: [Java,pring]
 tags: [Java,Spring]
 ---
 
