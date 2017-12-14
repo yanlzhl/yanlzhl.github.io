@@ -95,6 +95,8 @@ hiveContext总的一个过程如下图所示：
 
   # 参考
   - [sparkSQL的整体实现框架][6]
+  - [sparkSQL实战详解][7]
+  
 
 
   [1]: http://s4.51cto.com/wyfs02/M02/86/BF/wKiom1fJJ5SxT9LVAAJ2VA9WO-U118.png-wh_500x0-wm_3-wmp_4-s_1848369973.png
@@ -103,3 +105,4 @@ hiveContext总的一个过程如下图所示：
   [4]: http://img.blog.csdn.net/20151107210218234?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center
   [5]: http://img.blog.csdn.net/20151107210233288?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center
   [6]: http://blog.51cto.com/9269309/1845525
+  [7]: https://www.cnblogs.com/hadoop-dev/p/6742677.html
