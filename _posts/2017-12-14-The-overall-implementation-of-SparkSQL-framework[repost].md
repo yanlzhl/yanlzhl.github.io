@@ -15,7 +15,7 @@ tags: [Spark,SparkSQL]
 那么在关系数据库中，当我们写完一个查询语句进行执行时，发生的过程如下图所示：
 ![此处输入图片的描述][2]
 
-整个执行流程是：query -> Parse -> Bind -> Optimize -> Execute
+整个执行流程是：**query -> Parse -> Bind -> Optimize -> Execute**
 
 1、写完sql查询语句，sql的查询引擎首先把我们的查询语句进行解析，也就是Parse过程，解析的过程是把我们写的查询语句进行分割，把project，DataSource和Filter三个部分解析出来从而形成一个逻辑解析tree，在解析的过程中还会检查我们的sql语法是否有错误，比如缺少指标字段、数据库中不包含这张数据表等。当发现有错误时立即停止解析，并报错。当顺利完成解析时，会进入到Bind过程。
 
@@ -34,42 +34,42 @@ tags: [Spark,SparkSQL]
 
 1、同样我们也是从如果让我们开发，我们应该怎么做，需要考虑什么问题来思考这个问题。
 
-     a、第一个问题是，数据源有几个，我们可能从哪些数据源读取数据？现在sparkSQL支持很多的数据源，比如：hive数据仓库、json文件，.txt，以及orc文件，同时现在还支持jdbc从关系数据库中取数据。功能很强大。
+- a、第一个问题是，数据源有几个，我们可能从哪些数据源读取数据？现在sparkSQL支持很多的数据源，比如：hive数据仓库、json文件，.txt，以及orc文件，同时现在还支持jdbc从关系数据库中取数据。功能很强大。
 
-     b、还一个需要思考的问题是数据类型怎么映射啊？我们知道当我们从一个数据库表中读入数据时，我们定义的表结构的字段的类型和编程语言比如scala中的数据类型映射关系是怎 样的一种映射关系？在sparkSQL中有一种来解决这个问题的方法，来实现数据表中的字段类型到编程语言数据类型的映射关系。这个以后详细介绍，先了解有这个问题就行。
+- b、还一个需要思考的问题是数据类型怎么映射啊？我们知道当我们从一个数据库表中读入数据时，我们定义的表结构的字段的类型和编程语言比如scala中的数据类型映射关系是怎 样的一种映射关系？在sparkSQL中有一种来解决这个问题的方法，来实现数据表中的字段类型到编程语言数据类型的映射关系。这个以后详细介绍，先了解有这个问题就行。
 
-     c、数据有了，那么在sparkSQL中我们应该怎么组织这些数据，需要什么样的数据结构呢，同时我们对这些数据都可以进行什么样的操作？sparkSQL采用的是DataFrame数据结构来组织读入到sparkSQL中的数据，DataFrame数据结构其实和数据库的表结构差不多，数据是按照行来进行存储，同是还有一个schema，就相当于数据库的表结构，记录着每一行数据属于哪个字段。
+- c、数据有了，那么在sparkSQL中我们应该怎么组织这些数据，需要什么样的数据结构呢，同时我们对这些数据都可以进行什么样的操作？sparkSQL采用的是DataFrame数据结构来组织读入到sparkSQL中的数据，DataFrame数据结构其实和数据库的表结构差不多，数据是按照行来进行存储，同是还有一个schema，就相当于数据库的表结构，记录着每一行数据属于哪个字段。
 
-     d、当数据处理完以后，我们需要把数据放入到什么地方，并切以什么样的格式进行对应，这个a和b要解决的问题是相同的。
+- d、当数据处理完以后，我们需要把数据放入到什么地方，并切以什么样的格式进行对应，这个a和b要解决的问题是相同的。
 
 2、sparkSQL对于以上问题，的实现逻辑也很明确，从上图，已经很清楚，主要分为两个阶段，每个阶段都对应一个具体的类来实现。
 
-    a、对于第一个阶段，sparkSQL中存在两个类来解决这些问题：HiveContext，SQLContext，同事hiveContext继承了SQLContext的所有方法，同事又对其进行了扩展。因为我们知道， hive和mysql的查询还是有一定的差别的。HiveContext只是用来处理从hive数据仓库中读入数据的操作，SQLContext可以处理sparkSQL能够支持的剩下的所有的数据源。这两个类处理的粒度是限制在对数据的读写上，同事对表级别的操作上，比如，读入数据、缓存表、释放缓存表表、注册表、删除注册的表、返回表的结构等的操作。
+- 对于第一个阶段，sparkSQL中存在两个类来解决这些问题：HiveContext，SQLContext，同事hiveContext继承了SQLContext的所有方法，同事又对其进行了扩展。因为我们知道， hive和mysql的查询还是有一定的差别的。HiveContext只是用来处理从hive数据仓库中读入数据的操作，SQLContext可以处理sparkSQL能够支持的剩下的所有的数据源。这两个类处理的粒度是限制在对数据的读写上，同事对表级别的操作上，比如，读入数据、缓存表、释放缓存表表、注册表、删除注册的表、返回表的结构等的操作。
 
-    b、sparkSQL处理读入的数据，采用的是DataFrame中提供的方法。因为当我们把数据读入到sparkSQL中，这个数据就是DataFrame类型的。同时数据都是按照Row进行存储的。其中 DataFrame中提供了很多有用的方法。以后会细说。
+- b、sparkSQL处理读入的数据，采用的是DataFrame中提供的方法。因为当我们把数据读入到sparkSQL中，这个数据就是DataFrame类型的。同时数据都是按照Row进行存储的。其中 DataFrame中提供了很多有用的方法。以后会细说。
 
-     c、在spark1.6版本以后，又增加了一个类似于DataFrame的数据结构DataSet，增加此数据结构的目的DataFrame有软肋，他只能处理按照Row进行存储的数据，并且只能使用DataFrame中提供的方法，我们只能使用一部分RDD提供的操作。实现DataSet的目的就是让我们能够像操作RDD一样来操作sparkSQL中的数据。
+- c、在spark1.6版本以后，又增加了一个类似于DataFrame的数据结构DataSet，增加此数据结构的目的DataFrame有软肋，他只能处理按照Row进行存储的数据，并且只能使用DataFrame中提供的方法，我们只能使用一部分RDD提供的操作。实现DataSet的目的就是让我们能够像操作RDD一样来操作sparkSQL中的数据。
 
-    d、其中还有一些其他的类，但是现在在sparkSQL中最主要的就是上面的三个类，其他类以后碰到了会慢慢想清楚。
+- 其中还有一些其他的类，但是现在在sparkSQL中最主要的就是上面的三个类，其他类以后碰到了会慢慢想清楚。
 
 # sparkSQL的hiveContext和SQLContext的运行原理
      hiveContext和SQLContext与我第一部分讲到的sql语句的模块解析实现的原理其实是一样的，采用了同样的逻辑过程，并且网上有好多讲这一块的，就直接粘贴复制啦！！
 
   sqlContext总的一个过程如下图所示：
 
-    1.SQL语句经过SqlParse解析成UnresolvedLogicalPlan；
+- 1.SQL语句经过SqlParse解析成UnresolvedLogicalPlan；
 
-    2.使用analyzer结合数据数据字典（catalog）进行绑定，生成resolvedLogicalPlan；
+- 2.使用analyzer结合数据数据字典（catalog）进行绑定，生成resolvedLogicalPlan；
 
-    3.使用optimizer对resolvedLogicalPlan进行优化，生成optimizedLogicalPlan；
+- 3.使用optimizer对resolvedLogicalPlan进行优化，生成optimizedLogicalPlan；
 
-    4.使用SparkPlan将LogicalPlan转换成PhysicalPlan；
+- 4.使用SparkPlan将LogicalPlan转换成PhysicalPlan；
 
-    5.使用prepareForExecution()将PhysicalPlan转换成可执行物理计划；
+- 5.使用prepareForExecution()将PhysicalPlan转换成可执行物理计划；
 
-    6.使用execute()执行可执行物理计划；
+- 6.使用execute()执行可执行物理计划；
 
-    7.生成SchemaRDD。
+- 7.生成SchemaRDD。
 
 在整个运行过程中涉及到多个SparkSQL的组件，如SqlParse、analyzer、optimizer、SparkPlan等等
 
@@ -77,19 +77,19 @@ tags: [Spark,SparkSQL]
 
 hiveContext总的一个过程如下图所示：
 
-    1.SQL语句经过HiveQl.parseSql解析成Unresolved LogicalPlan，在这个解析过程中对hiveql语句使用getAst()获取AST树，然后再进行解析；
+- 1.SQL语句经过HiveQl.parseSql解析成Unresolved LogicalPlan，在这个解析过程中对hiveql语句使用getAst()获取AST树，然后再进行解析；
 
-    2.使用analyzer结合数据hive源数据Metastore（新的catalog）进行绑定，生成resolved LogicalPlan；
+- 2.使用analyzer结合数据hive源数据Metastore（新的catalog）进行绑定，生成resolved LogicalPlan；
 
-    3.使用optimizer对resolved LogicalPlan进行优化，生成optimized LogicalPlan，优化前使用了ExtractPythonUdfs(catalog.PreInsertionCasts(catalog.CreateTables(analyzed)))进行预处理；
+- 3.使用optimizer对resolved LogicalPlan进行优化，生成optimized LogicalPlan，优化前使用了ExtractPythonUdfs(catalog.PreInsertionCasts(catalog.CreateTables(analyzed)))进行预处理；
 
-    4.使用hivePlanner将LogicalPlan转换成PhysicalPlan；
+- 4.使用hivePlanner将LogicalPlan转换成PhysicalPlan；
 
-    5.使用prepareForExecution()将PhysicalPlan转换成可执行物理计划；
+- 5.使用prepareForExecution()将PhysicalPlan转换成可执行物理计划；
 
-    6.使用execute()执行可执行物理计划；
+- 6.使用execute()执行可执行物理计划；
 
-    7.执行后，使用map(_.copy)将结果导入SchemaRDD。
+- 7.执行后，使用map(_.copy)将结果导入SchemaRDD。
 ![此处输入图片的描述][5]
 
 
