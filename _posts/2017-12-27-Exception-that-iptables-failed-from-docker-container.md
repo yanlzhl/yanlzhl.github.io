@@ -2,7 +2,7 @@
 layout: post
 date: 2017-12-27 16:30
 title: Exception that iptables failed from docker container
-description: docker容器启动异常 提示iptables failed:iptables --wait -t filter -ADOCKER
+description: docker容器启动异常 提示iptables failed:iptables --wait -t filter -A DOCKER
 categories: [Docker]
 tags: [Docker,Linux]
 ---
