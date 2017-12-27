@@ -3,8 +3,8 @@ layout: post
 date: 2017-12-27 16:30
 title: Exception that iptables failed from docker container
 description: docker容器启动异常 提示iptables failed:iptables --wait -t filter -ADOCKER
-categories: [Spark,SparkSQL]
-tags: [Spark,SparkSQL]
+categories: [Docker]
+tags: [Docker,Linux]
 ---
 
 # 问题
