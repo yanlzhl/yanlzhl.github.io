@@ -10,6 +10,7 @@ tags: [Kubernetes,Docker]
 
 # 准备工作
 我是先对docker初步到进阶的了解学习，常用的命令，基本的容器构建和docker原理概念学习完之后，步入k8s。即使这样，刚看k8s官方文档时，其设计理念、组件构成以及生态需要了解掌握的知识不在少数。为此，花了几天时间在官方文档&个人博客上做了上述方面初步了解，较为直观的便可分为两方面：
+
 **master:**
 
  - API server
@@ -53,7 +54,7 @@ tags: [Kubernetes,Docker]
 ----------
 **注意：如果你的服务器已经安装过docker，依据我的建议是应该卸载干净，不然会因kubernetes-node和docker产生冲突，导致node启动不了，找不到服务。**
 
-##master环境搭建
+## master环境搭建
 ### 关闭防火墙
 我因使用的是iptables,在以前安装centos7时就变更了防火墙软件，不然建议先禁用centos7自带的Firewall
 ```python
