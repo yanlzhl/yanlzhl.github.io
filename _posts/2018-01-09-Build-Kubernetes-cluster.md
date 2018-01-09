@@ -11,24 +11,33 @@ tags: [Kubernetes,Docker]
 #准备工作
 我是先对docker初步到进阶的了解学习，常用的命令，基本的容器构建和docker原理概念学习完之后，步入k8s。即使这样，刚看k8s官方文档时，其设计理念、组件构成以及生态需要了解掌握的知识不在少数。为此，花了几天时间在官方文档&个人博客上做了上述方面初步了解，较为直观的便可分为两方面：
 **master:**
-API server
-Controller Manager
-Scheduler
-etcd
+
+ - API server
+ - Controller Manager
+ - Scheduler
+ - Etcd
+
 
 **node:**
-kublet
-kube-proxy
-pod
+    
+ - kublet
+ - kube-proxy
+ - pod
 
-Kubernetes集群组件:
-　　- **etcd** 一个高可用的K/V键值对存储和服务发现系统
-　　- **flannel** 实现夸主机的容器网络的通信
-　　- **kube-apiserver** 提供kubernetes集群的API调用
-　　- **kube-controller-manager** 确保集群服务
-　　- **kube-scheduler** 调度容器，分配到Node
-　　- **kubelet** 在Node节点上按照配置文件中定义的容器规格启动容器
-　　- **kube-proxy** 提供网络代理服务
+
+ 
+ 
+
+**Kubernetes集群组件:**
+
+ - **etcd** 一个高可用的K/V键值对存储和服务发现系统
+ - **flannel** 实现夸主机的容器网络的通信
+ - **kube-apiserver** 提供kubernetes集群的API调用
+ - **kube-controller-manager** 确保集群服务
+ - **kube-scheduler** 调度容器，分配到Node
+ - **kubelet** 在Node节点上按照配置文件中定义的容器规格启动容器
+ - **kube-proxy** 提供网络代理服务
+
 这些是在安装过程中直接接触的组件，了解其用途和原理会更胸有成竹吧。
 若没有docker基础，应优先学习docker，在构建k8s时更易切解决碰到的问题。
 #搭建过程
