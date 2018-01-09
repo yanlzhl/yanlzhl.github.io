@@ -8,7 +8,7 @@ tags: [Kubernetes,Docker]
 ---
 
 
-#准备工作
+# 准备工作
 我是先对docker初步到进阶的了解学习，常用的命令，基本的容器构建和docker原理概念学习完之后，步入k8s。即使这样，刚看k8s官方文档时，其设计理念、组件构成以及生态需要了解掌握的知识不在少数。为此，花了几天时间在官方文档&个人博客上做了上述方面初步了解，较为直观的便可分为两方面：
 **master:**
 
@@ -40,14 +40,13 @@ tags: [Kubernetes,Docker]
 
 这些是在安装过程中直接接触的组件，了解其用途和原理会更胸有成竹吧。
 若没有docker基础，应优先学习docker，在构建k8s时更易切解决碰到的问题。
-#搭建过程
+# 搭建过程
 官网给出的搭建流程不是很满意，会出问题，环境不同异常不同，排查起来需要用时间填坑；此外也有大量开发者给出的个人经验很有借鉴意义但也是有漏洞，或不详尽，或漏洞百出，需要读多篇这样的文章，相互比较找出漏洞形成完整的搭建思路才方便一部搭建到位，说简单也简单，复杂也是。
 
 ----------
-环境：centos 7
-服务器：centos 7 X 2
-ecs-ali2  master
-ecs-ali3  node
+- 环境：centos 7
+- ecs-ali2  master
+- ecs-ali3  node
 
 因另外一台服务器负载较高，所以就搭建2个节点的集群，还是有别于但节点服务器的。3+节点的单间过程和此文相同，复制node搭建过程便可。
 
@@ -247,7 +246,7 @@ etcdctl mk /atomic.io/network/config '{"Network":"172.17.0.0/16"}
 然后你可以访问master节点8080端口，将会返会json格式的节点环境数据！
 
 
-##node环境搭建
+## node环境搭建
 **执行下面命令前，确认是否已经安装docker，若是则卸载，不然出问题，即使卸载后，kubernetes-node也会再次自动装上docker。**
 ### 安装flannel和kubernetes-node
 ```python
@@ -352,7 +351,7 @@ ecs-ali3   Ready     1h
 状态为Ready，则说明集群搭建成功
 ```
 
-#官方文档采坑点
+# 官方文档采坑点
 https://www.kubernetes.org.cn/doc-16，若是参考这个，以下是一些碰到的问题：
 在添加添加virt7-testing源，其使用下面信息添加源：
 ```python
@@ -373,7 +372,7 @@ baseurl=http://cbs.centos.org/repos/virt7-docker-common-candidate/x86_64/os/
 ```
 反正照着官方汉化文档我没有成功，应该不是我智商着急的原因！
 
-#参考文档
+# 参考文档
 [k8s学习（强烈推荐，写的不错）][1]
 [k8s中文官方文档][2]
 [k8s集群搭建][3]
