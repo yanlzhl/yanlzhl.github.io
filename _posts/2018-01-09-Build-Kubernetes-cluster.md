@@ -374,9 +374,9 @@ baseurl=http://cbs.centos.org/repos/virt7-docker-common-candidate/x86_64/os/
 反正照着官方汉化文档我没有成功，应该不是我智商着急的原因！
 
 # 参考文档
-[k8s学习（强烈推荐，写的不错）][1]
-[k8s中文官方文档][2]
-[k8s集群搭建][3]
+- [k8s学习（强烈推荐，写的不错）][1]
+- [k8s中文官方文档][2]
+- [k8s集群搭建][3]
 
 
   [1]: http://qinghua.github.io/kubernetes-in-mesos-1/
