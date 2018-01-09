@@ -330,6 +330,19 @@ tcp6       0      0 :::4194                 :::*                    LISTEN      
 则恭喜你成了
 ```
 
+### 集群环境验证
+在master上执行如下命令
+```python
+kubectl get node
+
+我的是：
+[root@ecs-ali2 yum.repos.d]# kubectl get node
+NAME       STATUS    AGE
+ecs-ali3   Ready     1h
+
+状态为Ready，则说明集群搭建成功
+```
+
 #官方文档采坑点
 https://www.kubernetes.org.cn/doc-16，若是参考这个，以下是一些碰到的问题：
 在添加添加virt7-testing源，其使用下面信息添加源：
