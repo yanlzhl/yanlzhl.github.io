@@ -14,6 +14,79 @@ tags: [ElasticSearch,JestClient]
 写成“每天3时”(0 3 * * *)执行...ops.开通该业务的公司有20个左右，总的数据冗余量在50000-100000条左右。
 ```
 
+---
+2018-3-9更新
+
+昨天写完这篇总结，还特意查看了下6.0新特性等，后面得知es存在按条件(delete-by-query)删除documents!
+额，之前一直苦苦没有找到，还费劲巴拉的建工程写rest api...
+
+反思了下：为什么当时没有找到[delete-by-query]？当google时我一直在输入‘elasticsearch 批量删除’而不是‘elasticsearch按条件删除’，搜索信息还是非常重要的，关键词合适与否将决定返回的结果！！
+
+[delete-by-query]曾在2.x中剔除了，若要使用需手动安装插件，然后在5.x又回归了，6.0实践也是可用的。
+
+官方介绍：https://www.elastic.co/guide/en/elasticsearch/reference/5.2/docs-delete-by-query.html
+“The simplest usage of _delete_by_query just performs a deletion on every document that match a query. ”_delete_by_query的最简单用法只是对每个匹配查询的文档执行删除操作。也就是能删除每个匹配的文档，即使每个type下的文档被清空后，该type依旧存在！
+```
+官方文档给出的格式，这边是直接在index之后，其实可以index/type/_delete_by_query也是没问题的
+
+POST twitter/_delete_by_query
+{
+  "query": { 
+    "match": {
+      "message": "some message"
+    }
+  }
+}
+```
+我的删除接口对应的es script
+```java
+POST /spark_201802/spark/_delete_by_query
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "start_time": {
+              "value": "2018-01-01T00:00:00+08:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "end_time": {
+              "value": "2018-01-31T23:59:59+08:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "type": {
+              "value": "dialCount_bridged_rate"
+            }
+          }
+        },
+        {
+          "term": {
+            "enterprise_id": {
+              "value": 7000132
+            }
+          }
+        }
+      ],
+      "filter": {
+        "range": {
+          "create_time": {
+            "gte": "2018-02-08T04:00:07.407+08:00",
+            "lte": "2018-02-10T04:05:07.407+08:00"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 # es删除方式
 平时开发日常用，一般设计的es操作为create，query或者基于aggs上的query，几乎没有任何DELETE的业务接口；因query能通过range筛选出符合一定日期范围的数据，类似的思维，DELETE命令是否也能圈定日期内的数据，批量删除呢？
 
